@@ -4,9 +4,50 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  gql
+} from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: 'http://localhost:4000',
+  cache: new InMemoryCache()
+});
+
+client
+  .query({
+    query: gql`
+      query GetProduct {
+        product(id: "huarache-x-stussy-le")  {
+          id
+          name
+          inStock
+          gallery
+          description
+          category
+          attributes {
+            name
+          }
+          prices {
+            currency {
+              label
+            }
+          }
+          brand
+        }
+      }
+    `
+  })
+  .then(result => console.log(result));
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
