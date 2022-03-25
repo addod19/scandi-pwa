@@ -6,6 +6,8 @@ import {
   gql
 } from "@apollo/client";
 
+import Navbar from './Components/Navbar';
+
 
 const GET_PRODUCT = gql`
   query GetProduct {
@@ -38,7 +40,7 @@ function GetProduct() {
   
   return (
     <>
-      <h1>Category</h1>
+      <Navbar />
     </>
   )
   // return data.product.map(({ id, brand, category, description, inStock, name, prices, attributes }) => (
@@ -55,7 +57,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <h1>Welcome to Scandi-PWA</h1>
         <GetProduct />
       </div>
     );
