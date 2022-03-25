@@ -19,23 +19,26 @@ const client = new ApolloClient({
 client
   .query({
     query: gql`
-      query GetProduct {
-        product(id: "huarache-x-stussy-le")  {
-          id
+      query GetCategory {
+        category {
           name
-          inStock
-          gallery
-          description
-          category
-          attributes {
-            name
-          }
-          prices {
-            currency {
-              label
+            products {
+              id
+              name
+              inStock
+              gallery
+              description
+              category
+              attributes {
+                name
+              }
+              prices {
+                currency {
+                  label
+                }
+              }
+              brand
             }
-          }
-          brand
         }
       }
     `
