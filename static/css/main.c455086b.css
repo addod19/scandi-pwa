@@ -1,0 +1,2 @@
+*{box-sizing:border-box;margin:0;padding:0}.left-nav-item{align-items:center;color:#5ece7b;display:flex;flex:none;flex-grow:0;font-family:Raleway;font-size:16px;font-style:normal;font-weight:600;line-height:120%;margin:30px 0;order:0;text-align:center;text-transform:uppercase}.active{color:#5ece7b}.active:hover{cursor:pointer}.not-active{color:#1d1f22}.not-active:hover{cursor:pointer}.grid{grid-gap:20px;display:grid;gap:20px;grid-template-columns:repeat(3,1fr);width:100%}.app{border:1px solid green;width:100}
+/*# sourceMappingURL=main.c455086b.css.map*/

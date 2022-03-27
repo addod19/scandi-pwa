@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/scandi-pwa/static/css/main.c455086b.css",
+    "main.js": "/scandi-pwa/static/js/main.daa6a36c.js",
+    "static/js/787.b1b74605.chunk.js": "/scandi-pwa/static/js/787.b1b74605.chunk.js",
+    "index.html": "/scandi-pwa/index.html",
+    "main.c455086b.css.map": "/scandi-pwa/static/css/main.c455086b.css.map",
+    "main.daa6a36c.js.map": "/scandi-pwa/static/js/main.daa6a36c.js.map",
+    "787.b1b74605.chunk.js.map": "/scandi-pwa/static/js/787.b1b74605.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c455086b.css",
+    "static/js/main.daa6a36c.js"
+  ]
+}
