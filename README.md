@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Scandi-PWA eCommerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with:
+- [ ] [Create React App](https://github.com/facebook/create-react-app)
+- [ ] Use Class Components for components and pages
+- [ ] Use Styled Components for styling and layouts
 
-## Available Scripts
+## Functionality Requirements
 
-In the project directory, you can run:
+- [ ] Product Listing Page (PLP), a.k.a (Category page)
+- [ ] Product Description Page (PDP), a.k.a (Product page)
+- [ ] Cart page + Cart overlay (minicart)
 
-### `npm start`
+## Project Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [ ] Ability to add/remove products and change their amounts in cart - on the cart page itself, PLP and PDP should be provided
+- [ ] For products that have various options (attributes) - the options should be selected
+- [ ] The selected options of added to cart products should be visible in cart overlay and in cart page
+- [ ] If an attribute is a swatch attribute (type = swatch), a representation of the value should be rendered on PDP and PLP, rather than text description (e.g. the color itself, not "Blue" or "0000FF")
+- [ ] Filtering products by category name for all of the categories from BE
+- [ ] The descriptions provided in HTML format should be parsed and presented as HTML, not as plain text
+- [ ] Ability to change the currency of the store to one of the available currencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+#### Currency Switcher
+![Screenshot from 2022-03-27 04-47-43](https://user-images.githubusercontent.com/46388113/160267571-ae43f76f-a8b9-4bcc-a212-86ac00980890.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Built With
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- ApolloClient
+- GQL
+- CSS
+- React-router-dom
+- React-icons
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Live Demo
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+[Live Demo Link](https://addod19.github.io/scandi-pwa/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To get a local copy up and running follow these simple example steps.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. `git clone https://github.com/addod19/scandi-pwa.git`
+2. `npm i`
+3. `npm start`
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prerequisites
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- A modern browser
 
-### Code Splitting
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+👤 **Daniel Larbi Addo**
 
-### Analyzing the Bundle Size
+- Github: [@addod19](https://github.com/addod19)
+- Twitter: [@DanielLarbiAdd1](https://twitter.com/DanielLarbiAdd1)
+- Linkedin: [Daniel Larbi Addo](https://linkedin.com/in/daniel-larbi-addo-9738b0128/)
+- Email: [Daniel Larbi Addo](addodaniellarbi@gmail.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🤝 Contributing
 
-### Making a Progressive Web App
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Feel free to check the [issues page](https://github.com/addod19/scandi-pwa/issues).
 
-### Advanced Configuration
+1. Fork it (https://github.com/addod19/scandi-pwa/fork)
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Commit your changes (git commit -am 'Add some feature')
+4. Push to the branch (git push origin my-new-feature)
+5. Create a new Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Show your support
 
-### Deployment
+Give us a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Acknowledgments
 
-### `npm run build` fails to minify
+- Hat tip to anyone who's code was used
+- Inspiration
+- etc
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
