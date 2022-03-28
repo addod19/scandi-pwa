@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { PDPWrapper, ImageWrap, ImageSamplesWrap, MainImageWrap, 
   DetailsWrap, NameWrap, SizesWrap, PriceWrap, AddToCartBtn,
   DescriptionWrap, SmallImg, BigImg, PDTName, SizesLabel, SizesList,
-  SizesBtn, XSmall, Small, Medium, Large, PriceLabel, PriceAmount, DescText } from '../styles/ProductDetails';
+  SizesBtn, XSmall, Small, Medium, Large, PriceLabel, PriceAmount,
+  DescText, Apollo, RunShort, AddToCarAction } from '../styles/ProductDetails';
 
 export default class ProductDetails extends Component {
   constructor(props) {
     super(props);
 
-    console.log(this.props.data);
+    console.log(this.props);
   }
   
   render() {
@@ -26,7 +27,14 @@ export default class ProductDetails extends Component {
         </ImageWrap>
         <DetailsWrap>
           <NameWrap>
-            <PDTName>Apollo Running Short</PDTName>
+            <PDTName>
+              <Apollo>
+                Apollo
+              </Apollo><br /> 
+              <RunShort>
+                Running Short
+              </RunShort>
+            </PDTName>
           </NameWrap>
           <SizesWrap>
             <SizesLabel>SIZE:</SizesLabel>
@@ -58,7 +66,7 @@ export default class ProductDetails extends Component {
             <PriceAmount>${50.00}</PriceAmount>
           </PriceWrap>
           <AddToCartBtn>
-            <button>ADD TO CART</button>
+            <AddToCarAction>ADD TO CART</AddToCarAction>
           </AddToCartBtn>
           <DescriptionWrap>
             <DescText>
