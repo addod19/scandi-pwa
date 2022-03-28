@@ -7,7 +7,7 @@ import {
 import ProductListing from './Containers/ProductListing';
 import ProductDetails from './Containers/ProductDetails';
 import { StyledApp, StyledNav } from './styles/AppStyle';
-
+import Navbar from './Components/Navbar';
 
 export default class App extends Component {
   render() {
@@ -16,9 +16,7 @@ export default class App extends Component {
         <div className="container-fluid">
           <StyledApp>
             <StyledNav>
-              <Link exact="true" to="/">
-                <h1 className="cata">Category</h1>
-              </Link>
+              <Navbar />
             </StyledNav>
             <Routes>
               <Route exact path="/" element={<ProductListing /> } />

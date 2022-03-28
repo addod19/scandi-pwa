@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Container } from '../styles/CategoryList';
+import { Container, H1 } from '../styles/CategoryList';
 
 import { GetProductListings } from '../Graphql/Queries';
 
@@ -8,9 +8,13 @@ export default class ProductListing extends Component {
 
   render() {
     return (
-      <Container>
-        <GetProductListings />
-      </Container>
+      <>
+        <H1>Category name</H1>
+        <Container>
+          <GetProductListings />
+        </Container>
+      </>
+      
     )
   }
 }

@@ -24,4 +24,19 @@ const Container = styled.div`
   flex-wrap: wrap;
 `;
 
-export { FilterWrap, ProductListingWrap, Container };
+const H1 = styled.h1`
+    position: absolute;
+    left: 10%;
+    width: 299px;
+    height: 68px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 160%;
+    display: flex;
+    align-items: center;
+    color: #1D1F22;
+`;
+
+export { FilterWrap, ProductListingWrap, Container, H1 };
