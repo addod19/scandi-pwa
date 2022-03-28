@@ -42,10 +42,10 @@ const H3 = styled.h3`
   color: #8D8F9A;
 `;
 
-
 const ProductCard = styled.div`
 
 `;
 
-
-export { ProductCardWrap, Img, H3, ProductCard };
+export {
+  ProductCardWrap, Img, H3, ProductCard,
+};

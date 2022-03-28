@@ -1,11 +1,12 @@
 import {
-    useQuery,
-    gql
-} from "@apollo/client";
-import { Link } from "react-router-dom";
+  useQuery,
+  gql,
+} from '@apollo/client';
+import { Link } from 'react-router-dom';
 
-import { ProductCardWrap, ProductCard, Img, H3 } from "../styles/Queries";
-
+import {
+  ProductCardWrap, ProductCard, Img, H3,
+} from '../styles/Queries';
 
 const GET_CATEGORY = gql`
   query GetCategory {
@@ -32,17 +33,18 @@ const GET_CATEGORY = gql`
   }
 `;
 
-export const GetProductListings = () => {
+const GetProductListings = () => {
   const { loading, error, data } = useQuery(GET_CATEGORY);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  
-  return data.category.products.map(({ id, inStock, gallery, name }) => (
+  return data.category.products.map(({
+    id, inStock, gallery, name,
+  }) => (
     <ProductCardWrap key={id}>
-      <Link key={id} to={{ pathname: `/${id}`, state: data }} >
-        <ProductCard >
+      <Link key={id} to={{ pathname: `/${id}`, state: data }}>
+        <ProductCard>
           {inStock ? null : <H3>Out of Stock</H3>}
           <Img src={gallery[0]} alt="sample" />
           <p>
@@ -55,5 +57,6 @@ export const GetProductListings = () => {
       </Link>
     </ProductCardWrap>
   ));
-}
+};
 
+export default GetProductListings;

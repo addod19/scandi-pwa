@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
-import { PDPWrapper, ImageWrap, ImageSamplesWrap, MainImageWrap, 
+import {
+  PDPWrapper, ImageWrap, ImageSamplesWrap, MainImageWrap,
   DetailsWrap, NameWrap, SizesWrap, PriceWrap, AddToCartBtn,
   DescriptionWrap, SmallImg, BigImg, PDTName, SizesLabel, SizesList,
   SizesBtn, XSmall, Small, Medium, Large, PriceLabel, PriceAmount,
-  DescText, Apollo, RunShort, AddToCarAction } from '../styles/ProductDetails';
+  DescText, Apollo, RunShort, AddToCarAction,
+} from '../styles/ProductDetails';
 
-export default class ProductDetails extends Component {
-  constructor(props) {
-    super(props);
-
-    console.log(this.props);
-  }
-  
+export default class ProductDetails extends Component.Pure {
   render() {
     return (
       <PDPWrapper>
@@ -30,7 +26,8 @@ export default class ProductDetails extends Component {
             <PDTName>
               <Apollo>
                 Apollo
-              </Apollo><br /> 
+              </Apollo>
+              <br />
               <RunShort>
                 Running Short
               </RunShort>
@@ -63,20 +60,23 @@ export default class ProductDetails extends Component {
           </SizesWrap>
           <PriceWrap>
             <PriceLabel>PRICE:</PriceLabel>
-            <PriceAmount>${50.00}</PriceAmount>
+            <PriceAmount>
+              $
+              {50.00}
+            </PriceAmount>
           </PriceWrap>
           <AddToCartBtn>
             <AddToCarAction>ADD TO CART</AddToCarAction>
           </AddToCartBtn>
           <DescriptionWrap>
             <DescText>
-              Find stunning women's cocktail dresses and party dresses.
-              Stand out in lace and metallic cocktail dresses and party dresses 
+              Find stunning women&#39;s cocktail dresses and party dresses.
+              Stand out in lace and metallic cocktail dresses and party dresses
               from all your favorite brands.
             </DescText>
           </DescriptionWrap>
         </DetailsWrap>
       </PDPWrapper>
-    )
+    );
   }
 }

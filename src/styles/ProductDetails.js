@@ -123,7 +123,6 @@ const SizesBtn = styled.button`
   }
 `;
 
-
 const PriceWrap = styled.div`
   margin-top: 20px;
 `;
@@ -208,7 +207,9 @@ const AddToCarAction = styled.button`
   }
 `;
 
-export { PDPWrapper, ImageWrap, ImageSamplesWrap, MainImageWrap, DetailsWrap,
+export {
+  PDPWrapper, ImageWrap, ImageSamplesWrap, MainImageWrap, DetailsWrap,
   NameWrap, SizesWrap, PriceWrap, AddToCartBtn, DescriptionWrap, SmallImg,
   BigImg, PDTName, SizesLabel, SizesList, SizesBtn, XSmall, Small, Medium, Large,
-  PriceLabel, PriceAmount, DescText, Apollo, RunShort, AddToCarAction };
+  PriceLabel, PriceAmount, DescText, Apollo, RunShort, AddToCarAction,
+};

@@ -39,4 +39,6 @@ const H1 = styled.h1`
     color: #1D1F22;
 `;
 
-export { FilterWrap, ProductListingWrap, Container, H1 };
+export {
+  FilterWrap, ProductListingWrap, Container, H1,
+};
