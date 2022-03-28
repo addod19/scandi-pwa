@@ -4,7 +4,7 @@ const FilterWrap = styled.div`
   text-align: center;
 `;
 
-const ProductWrap = styled.div`
+const ProductListingWrap = styled.div`
   display: block;
   @media only screen and (min-width: 578px) and (max-width: 1024px) {
     width: 100%;
@@ -20,9 +20,8 @@ const ProductWrap = styled.div`
 const Container = styled.div`
   width: 80%;
   margin: auto;
-  border: 1px solid red;
   display: flex;
   flex-wrap: wrap;
 `;
 
-export { FilterWrap, ProductWrap, Container };
+export { FilterWrap, ProductListingWrap, Container };

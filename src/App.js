@@ -1,21 +1,32 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
 
-import Navbar from './Components/Navbar';
-import CategoryList from './Components/CategoryList';
+import {
+  BrowserRouter as Router, Route, Routes, Link,
+} from 'react-router-dom';
 
-class App extends React.Component {
+import ProductListing from './Containers/ProductListing';
+import ProductDetails from './Containers/ProductDetails';
+import { StyledApp, StyledNav } from './styles/AppStyle';
 
+
+export default class App extends Component {
   render() {
     return (
-      <div className="app">
-        <Navbar />
-        <div className='grid'>
-          <CategoryList />
+      <Router>
+        <div className="container-fluid">
+          <StyledApp>
+            <StyledNav>
+              <Link exact="true" to="/">
+                <h1 className="cata">Category</h1>
+              </Link>
+            </StyledNav>
+            <Routes>
+              <Route exact path="/" element={<ProductListing /> } />
+              <Route exact path="/:id" element={<ProductDetails /> } />
+            </Routes>
+          </StyledApp>
         </div>
-      </div>
-    );
+      </Router>
+    )
   }
 }
-
-export default App;

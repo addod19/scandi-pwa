@@ -2,7 +2,10 @@ import {
     useQuery,
     gql
 } from "@apollo/client";
-import styled from 'styled-components';
+import { Link } from "react-router-dom";
+
+import { ProductCardWrap, ProductCard, Img, H3 } from "../styles/Queries";
+
 
 const GET_CATEGORY = gql`
   query GetCategory {
@@ -29,82 +32,27 @@ const GET_CATEGORY = gql`
   }
 `;
 
-const ProductCardWrap = styled.section`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 16px;
-
-    position: static;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-
-    /* --c-white */
-
-    background: #FFFFFF;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0px 0px;
-    border: 1px solid black;
-
-    height: 450px;
-    width: 400px;
-`;
-
-const Img = styled.img`
-  width: 356px;
-  height: 388px
-`;
-
-const H3 = styled.h3`
-  position: relative;
-  top: 200px;
-  left: 100px;
-
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 160%;
-
-  display: flex;
-  align-items: center;
-
-  color: #8D8F9A;
-`;
-
-
-const ProductCard = styled.div`
-
-`;
-
-export const GetCategory = () => {
+export const GetProductListings = () => {
   const { loading, error, data } = useQuery(GET_CATEGORY);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
   
-  return data.category.products.map(({ id, gallery, description, inStock, name, brand }) => (
+  return data.category.products.map(({ id, inStock, gallery, name }) => (
     <ProductCardWrap key={id}>
-      <ProductCard >
-        {inStock ? null : <H3>Out of Stock</H3>}
-        <Img src={gallery[0]} alt="sample" />
-        <p>
-          {name}
-        </p>
-        <span>
-          $50.00
-        </span>
-      </ProductCard>
+      <Link key={id} to={{ pathname: `/${id}`, state: data }} >
+        <ProductCard >
+          {inStock ? null : <H3>Out of Stock</H3>}
+          <Img src={gallery[0]} alt="sample" />
+          <p>
+            {name}
+          </p>
+          <span>
+            $50.00
+          </span>
+        </ProductCard>
+      </Link>
     </ProductCardWrap>
   ));
 }
-
