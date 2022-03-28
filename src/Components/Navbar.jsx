@@ -21,6 +21,7 @@ export default class Navbar
     const currentState = isActive;
     this.setState({ isActive: !currentState });
   }
+
   render() {
     return (
       <NavBarWrap>

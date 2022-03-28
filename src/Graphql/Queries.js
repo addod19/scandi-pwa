@@ -1,3 +1,4 @@
+/* eslint no-tabs: ["error", { allowIndentationTabs: true }] */
 import {
   useQuery,
   gql,
