@@ -9,7 +9,8 @@ import ProductDetails from './Containers/ProductDetails';
 import { StyledApp, StyledNav } from './styles/AppStyle';
 import Navbar from './Components/Navbar';
 
-export default class App extends Component.Pure {
+// eslint-disable-next-line react/prefer-stateless-function
+export default class App extends Component {
   render() {
     return (
       <Router>

@@ -1,51 +1,47 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .left-nav-item {
-  font-family: 'Raleway', 'sans-serif';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 120%;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    /* identical to box height, or 19px */
 
-  /* identical to box height, or 19px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
 
-  display: flex;
-  align-items: center;
-  text-align: center;
-  text-transform: uppercase;
+    /* --c-primary */
 
-  /* --c-primary */
+    color: #5ECE7B;
 
-  color: #5ece7b;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 30px 0;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 30px 0px;
 }
 
 .active {
-  color: #5ece7b;
+    color: #5ECE7B;
 }
-
 .active:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
-
 .not-active {
-  color: #1d1f22;
+    color: #1D1F22;
 }
-
 .not-active:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
-
 .grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }

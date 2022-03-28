@@ -55,7 +55,6 @@ const RightBar = styled.section`
 const DollarSymbolDropDown = styled.ul``;
 const Cart = styled.div``;
 
-export {
-  NavBarWrap, NavBar, LeftBar, LeftBarItem, LeftBarItemLink, BorderBottom, MiddleBar,
-  LogoWrap, RightBar, DollarSymbolDropDown, Cart,
-};
+
+export { NavBarWrap, NavBar, LeftBar, LeftBarItem, LeftBarItemLink, BorderBottom, MiddleBar, 
+  LogoWrap, RightBar, DollarSymbolDropDown, Cart };

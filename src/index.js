@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {
-  ApolloProvider,
-  gql,
-} from '@apollo/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import client from './Graphql/constants';
+import { client } from './Graphql/constants';
+
+import {
+  ApolloProvider,
+  gql
+} from "@apollo/client";
 
 client
   .query({
@@ -35,9 +36,9 @@ client
             }
         }
       }
-    `,
+    `
   })
-  .then((result) => console.log(result));
+  .then(result => console.log(result));
 
 ReactDOM.render(
   <React.StrictMode>
@@ -45,7 +46,7 @@ ReactDOM.render(
       <App />
     </ApolloProvider>
   </React.StrictMode>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
