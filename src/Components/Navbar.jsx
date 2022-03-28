@@ -11,7 +11,6 @@ export default class Navbar
 
   constructor(props) {
     super(props);
-    this.toggleIsActive = this.toggleIsActive.bind(this);
     this.state = {
       isActive: false
     }
