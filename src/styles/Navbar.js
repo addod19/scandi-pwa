@@ -51,6 +51,7 @@ const LogoWrap = styled.div`
 
 const RightBar = styled.section`
   margin-top: 30px;
+  display: flex;
 `;
 const DollarSymbolDropDown = styled.ul``;
 const Cart = styled.div``;

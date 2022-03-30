@@ -12,7 +12,8 @@ export default class Navbar
   constructor(props) {
     super(props);
     this.state = {
-      isActive: false
+      isActive: false,
+      currency: '$',
     }
   }
 
@@ -22,7 +23,32 @@ export default class Navbar
     this.setState( {isActive: !currentState} );
   }
 
+  handleChange = (e) => {
+    this.setState({
+      currency: e.target.value,
+    });
+  }
+
   render() {
+    const { currency } = this.state;
+    const symbols = [
+      {
+        value: '$',
+      },
+      {
+        value: '£',
+      },
+      {
+        value: 'A$',
+      },
+      {
+        value: '¥',
+      },
+      {
+        value: '₽'
+      }
+    ];
+
     return (
       <NavBarWrap>
           <NavBar>
@@ -49,7 +75,13 @@ export default class Navbar
             </MiddleBar>
             <RightBar>
                 <DollarSymbolDropDown>
-
+                  <select value={currency} onChange={this.handleChange}>
+                    {
+                      symbols.map((symbol) => (
+                        <option key={symbol.value} value={symbol.value}>{symbol.value}</option>
+                      ))
+                    }
+                  </select>
                 </DollarSymbolDropDown>
                 <Cart>
                     <BsCart />
