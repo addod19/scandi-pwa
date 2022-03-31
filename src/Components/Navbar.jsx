@@ -48,7 +48,8 @@ export default class Navbar
         value: '₽'
       }
     ];
-
+    console.log(this.state.currency);
+    // const { currency } = this.state;
     return (
       <NavBarWrap>
           <NavBar>

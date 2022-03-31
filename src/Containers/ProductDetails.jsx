@@ -3,15 +3,59 @@ import { PDPWrapper, ImageWrap, ImageSamplesWrap, MainImageWrap,
   DetailsWrap, NameWrap, SizesWrap, PriceWrap, AddToCartBtn,
   DescriptionWrap, SmallImg, BigImg, PDTName, SizesLabel, SizesList,
   SizesBtn, XSmall, Small, Medium, Large, PriceLabel, PriceAmount,
-  DescText, Apollo, RunShort, AddToCarAction } from '../styles/ProductDetails';
+  DescText, Apollo, RunShort, AddToCarAction
+} from '../styles/ProductDetails';
 
-export default class ProductDetails extends Component {
+// import { gql } from "@apollo/client";
+// import { graphql } from 'graphql';
+
+// const product = gql`
+//   query product(id: $id) {
+//     product {
+//       id
+//       name
+//       inStock
+//       gallery
+//       description
+//       category
+//       attributes {
+//         id
+//         name
+//         type
+//         items {
+//           displayValue
+//           value
+//           id
+//         }
+//       }
+//       prices {
+//         currency {
+//           label
+//           symbol
+//         }
+//         amount
+//       }
+//       brand
+//     }
+//   }
+// `;
+
+// const ProductDetailsWithData = graphql(product, { options: ({ id }) => ({
+//   variables: { id }
+// }),})(ProductDetails);
+
+class ProductDetails extends Component {
   constructor(props) {
     super(props);
 
-    console.log(this.props);
+    console.log(this.props.data);
+    this.state = {
+      product: {
+
+      },
+    }
   }
-  
+
   render() {
     return (
       <PDPWrapper>
@@ -76,7 +120,10 @@ export default class ProductDetails extends Component {
             </DescText>
           </DescriptionWrap>
         </DetailsWrap>
+        {/* <ProductDetailsWithData /> */}
       </PDPWrapper>
     )
   }
 }
+
+export default ProductDetails;
