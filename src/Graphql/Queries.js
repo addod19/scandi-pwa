@@ -4,6 +4,7 @@ import {
     gql
 } from "@apollo/client";
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
 
 import { ProductCardWrap, ProductCard, Img, H3 } from "../styles/Queries";
 
@@ -33,7 +34,7 @@ const GET_CATEGORY = gql`
   }
 `;
 
-export const GetProductListings = () => {
+const GetProductListings = () => {
   const { loading, error, data } = useQuery(GET_CATEGORY);
 
   if (loading) return <p>Loading...</p>;
@@ -58,3 +59,9 @@ export const GetProductListings = () => {
   ));
 }
 
+const mapStateToProps = (state) => {
+  const { categories } = state;
+  // const { productList: categories.products };
+}
+
+export default connect(mapStateToProps)(GetProductListings);

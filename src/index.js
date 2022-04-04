@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 import { client } from './Graphql/constants';
 import store from './Redux/Store';
+import { Provider } from 'react-redux';
 
 import {
   ApolloProvider,
@@ -43,9 +44,11 @@ client
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider store={store} client={client}>
-      <App />
-    </ApolloProvider>
+    <Provider store={store} >
+      <ApolloProvider client={client}>
+        <App />
+      </ApolloProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

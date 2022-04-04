@@ -45,3 +45,13 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
+
+.modalOpen {
+    display: flex;
+    border: 1px solid black;
+    right: 50px;
+}
+
+.modlaClose {
+    display: none;
+}

@@ -6,53 +6,18 @@ import { PDPWrapper, ImageWrap, ImageSamplesWrap, MainImageWrap,
   DescText, Apollo, RunShort, AddToCarAction
 } from '../styles/ProductDetails';
 
-// import { gql } from "@apollo/client";
-// import { graphql } from 'graphql';
+import { gql } from "@apollo/client";
+import { graphql } from '@apollo/client/react/hoc';
+import CartOverlay from '../Components/CartOverlay';
 
-// const product = gql`
-//   query product(id: $id) {
-//     product {
-//       id
-//       name
-//       inStock
-//       gallery
-//       description
-//       category
-//       attributes {
-//         id
-//         name
-//         type
-//         items {
-//           displayValue
-//           value
-//           id
-//         }
-//       }
-//       prices {
-//         currency {
-//           label
-//           symbol
-//         }
-//         amount
-//       }
-//       brand
-//     }
-//   }
-// `;
 
-// const ProductDetailsWithData = graphql(product, { options: ({ id }) => ({
-//   variables: { id }
-// }),})(ProductDetails);
-
-class ProductDetails extends Component {
+class ProductWithDetails extends Component {
   constructor(props) {
     super(props);
 
-    console.log(this.props.data);
+    console.log(this.props);
     this.state = {
-      product: {
-
-      },
+      product: this.props.currencies,
     }
   }
 
@@ -120,10 +85,52 @@ class ProductDetails extends Component {
             </DescText>
           </DescriptionWrap>
         </DetailsWrap>
-        {/* <ProductDetailsWithData /> */}
+        <CartOverlay data={this.props} />
       </PDPWrapper>
     )
   }
 }
 
+const GetProductDetails = gql`
+  query currency {
+    currencies {
+      label,
+      symbol
+    }
+  }
+
+`;
+
+const ProductDetails = graphql(GetProductDetails)(ProductWithDetails);
+
+
 export default ProductDetails;
+
+
+  // query product(id: "jacket-canada-goosee")  {
+  //     id
+  //     name
+  //     inStock
+  //     gallery
+  //     description
+  //     category
+  //     attributes {
+  //       id
+  //       name
+  //       type
+  //       items {
+  //         displayValue
+  //         value
+  //         id
+  //       }
+  //     }
+  //     prices {
+  //       currency {
+  //         label
+  //         symbol
+  //       }
+  //       amount
+  //     }
+  //     brand
+  //   }
+  // }

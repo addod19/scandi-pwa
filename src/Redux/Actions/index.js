@@ -2,19 +2,30 @@ import axios from 'axios';
 import AllCurrencySymbols from './AllCurrencySymbols';
 
 const GETCATEGORIES = () => dispatch => {
-  const categoriesResult = [];
+  // const categoriesResult = [];
+  const res = await fetch("/api/products");
+  const data = await res.json();
+  console.log(data);
+  dispatch({
+    type: FETCH_PRODUCTS,
+    payload: data,
+  });
 };
 
 const GETPRODUCT = id => async dispatch => {
 
 };
 
-const FILTERCURRENCYSYMBOLS = () => async dispatch => {
-  AllCurrencySymbols.map();
-  const data = await axios.get();
+const FILTERCURRENCYSYMBOLS = (AllCurrencySymbols, symbol) => async dispatch => {
   dispatch({
-    type: 'FILTER_CURRENCY',
-    payload: data,
+    type: "FILTER_CURRENCY_BY_SYMBOL",
+    payload: {
+      symbol: symbol,
+      items:
+        symbol === ""
+          ? AllCurrencySymbols
+          : AllCurrencySymbols.filter((currency) => currency.symbol === symbol)
+    },
   });
 };
 

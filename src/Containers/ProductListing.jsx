@@ -9,9 +9,15 @@ import {
 import { Link } from "react-router-dom";
 
 import { ProductCardWrap, ProductCard, Img, H3 } from "../styles/Queries";
+import CartOverlay from '../Components/CartOverlay';
+import Currency from '../Components/Currency';
+import { useDispatch } from 'react-redux';
 
 const GetProductListings = () => {
   const { loading, error, data } = useQuery(GET_CATEGORY);
+  const dispatch = useDispatch();
+
+  console.log(dispatch);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
@@ -59,17 +65,20 @@ const GET_CATEGORY = gql`
   }
 `;
 
-export default class ProductListing extends Component {
-
+class ProductListing extends Component {
   render() {
     return (
       <>
         <H1>Category name</H1>
         <Container>
           <GetProductListings />
+          <CartOverlay />
+          <Currency />
         </Container>
       </>
       
     )
   }
 }
+
+export default ProductListing;
