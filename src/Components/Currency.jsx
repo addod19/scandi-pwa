@@ -4,6 +4,10 @@ import React, { Component } from 'react';
 import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 
+import { CurrencyWrap, CurrencySymbol, CurrencyLabel,
+  CurrencyLabelWrap
+} from '../styles/Currency';
+
 class MyCurrency extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +22,16 @@ class MyCurrency extends Component {
   render() {
     
     return (
-      <div>{"$"}</div>
+      <CurrencyWrap className='closeCurrency'>
+        <CurrencyLabelWrap>
+          <CurrencySymbol>{"$"}</CurrencySymbol>
+          <CurrencyLabel>{"USD"}</CurrencyLabel>
+        </CurrencyLabelWrap>
+        <CurrencyLabelWrap>
+          <CurrencySymbol>{"£"}</CurrencySymbol>
+          <CurrencyLabel>{"EURO"}</CurrencyLabel>
+        </CurrencyLabelWrap>
+      </CurrencyWrap>
     )
   }
 }

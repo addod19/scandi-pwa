@@ -47,11 +47,15 @@
 }
 
 .modalOpen {
-    display: flex;
     border: 1px solid black;
-    right: 50px;
 }
 
-.modlaClose {
+.modalOpen,
+.openCurrency {
+    display: flex;
+}
+
+.modlaClose,
+.closeCurrency {
     display: none;
 }

@@ -13,6 +13,8 @@ import CartOverlay from '../Components/CartOverlay';
 import Currency from '../Components/Currency';
 import { useDispatch } from 'react-redux';
 
+// import { Title, Label } from '../styles/ProductListing';
+
 const GetProductListings = () => {
   const { loading, error, data } = useQuery(GET_CATEGORY);
   const dispatch = useDispatch();
@@ -28,9 +30,9 @@ const GetProductListings = () => {
         <ProductCard >
           {inStock ? null : <H3>Out of Stock</H3>}
           <Img src={gallery[0]} alt="sample" />
-          <p>
+          <h3>
             {name}
-          </p>
+          </h3>
           <span>
             $50.00
           </span>

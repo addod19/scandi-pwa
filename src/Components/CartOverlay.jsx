@@ -62,7 +62,7 @@ class CartOverlay extends Component {
               <button>-</button>
             </BtnWrap>
             <CartOverlayImg
-              src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1591634795000" alt="check me" />
+              src="https://images-na.ssl-images-amazon.com/images/I/61RnXmpAmIL._SL1500_.jpg" alt="check me" />
           </Column4>
         </Row2>
         <Row3>

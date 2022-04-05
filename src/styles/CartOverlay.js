@@ -7,7 +7,8 @@ const CartOverlayContainer = styled.section`
   left: 1192px;
   top: 78px;
   background: #FFFFFF;
-  display: flex;
+  // display: flex;
+  display: none;
   flex-direction: column;
 `;
 
@@ -230,7 +231,6 @@ const CheckoutBtn = styled.button`
   font-weight: 600;
   font-size: 14px;
   line-height: 120%;
-  /* identical to box height, or 17px */
 
   display: flex;
   align-items: center;

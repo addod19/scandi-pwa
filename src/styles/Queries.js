@@ -40,6 +40,8 @@ const H3 = styled.h3`
   align-items: center;
 
   color: #8D8F9A;
+
+  text-decoration: none;
 `;
 
 

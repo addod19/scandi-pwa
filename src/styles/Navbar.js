@@ -53,8 +53,12 @@ const RightBar = styled.section`
   margin-top: 30px;
   display: flex;
 `;
-const DollarSymbolDropDown = styled.ul``;
-const Cart = styled.div``;
+const DollarSymbolDropDown = styled.ul`
+  margin-right: 5px;
+`;
+const Cart = styled.div`
+  margin-left: 5px;
+`;
 
 
 export { NavBarWrap, NavBar, LeftBar, LeftBarItem, LeftBarItemLink, BorderBottom, MiddleBar, 

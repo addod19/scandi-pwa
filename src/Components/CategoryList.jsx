@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import styled from 'styled-components';
 import CartOverlay from './CartOverlay';
 import { GetCategory } from '../Graphql/Queries';
 
