@@ -9,7 +9,6 @@ const ProductCardWrap = styled.section`
   position: static;
   left: 0%;
   right: 0%;
-  top: 0%;
   bottom: 0%;
   background: #FFFFFF;
   flex: none;
@@ -18,6 +17,8 @@ const ProductCardWrap = styled.section`
   margin: 25px 25px;
   height: 450px;
   width: 400px;
+  margin-top: 100px;
+  // border: 1px solid red;
 `;
 
 const Img = styled.img`

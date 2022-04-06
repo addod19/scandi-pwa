@@ -26,7 +26,7 @@ const GetProductListings = () => {
   
   return data.category.products.map(({ id, inStock, gallery, name }) => (
     <ProductCardWrap key={id} data={data}>
-      <Link key={id} to={{ pathname: `/id=${id}`, state: data }} >
+      <Link key={id} to={{ pathname: `/${id}`, state: data }} data={data} >
         <ProductCard >
           {inStock ? null : <H3>Out of Stock</H3>}
           <Img src={gallery[0]} alt="sample" />

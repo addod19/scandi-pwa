@@ -4,8 +4,8 @@ const CurrencyWrap = styled.div`
   position: absolute;
   width: 114px;
   height: 169px;
-  left: 1430px;
-  top: 65px;
+  left: 1405px;
+  top: 95px;
   background: #FFFFFF;
   justify-content: center;
 `;

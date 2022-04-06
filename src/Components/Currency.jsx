@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-// import { connect } from 'react-redux';
 import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 
@@ -11,30 +10,30 @@ import { CurrencyWrap, CurrencySymbol, CurrencyLabel,
 class MyCurrency extends Component {
   constructor(props) {
     super(props);
-    // console.log(props.data.currencies);
+
     this.state = {
-      label: props.data.currencies,
-      symbol: props.data.currencies,
+      currencies: [],
     }
-
-
   }
+
   render() {
-    
-    return (
+    let currencyList = this.props.data.currencies;
+    console.log(currencyList);
+    return (  
       <CurrencyWrap className='closeCurrency'>
-        <CurrencyLabelWrap>
-          <CurrencySymbol>{"$"}</CurrencySymbol>
-          <CurrencyLabel>{"USD"}</CurrencyLabel>
-        </CurrencyLabelWrap>
-        <CurrencyLabelWrap>
-          <CurrencySymbol>{"£"}</CurrencySymbol>
-          <CurrencyLabel>{"EURO"}</CurrencyLabel>
-        </CurrencyLabelWrap>
+        { 
+          currencyList?.map((currency, index) => {
+            return <CurrencyLabelWrap key={index}>
+              <CurrencySymbol>{currency.symbol}</CurrencySymbol>
+              <CurrencyLabel>{currency.label}</CurrencyLabel>
+            </CurrencyLabelWrap>;
+          })
+        }
       </CurrencyWrap>
     )
   }
 }
+
 
 const GET_CURRENCY = gql`
   query GetCurrency {

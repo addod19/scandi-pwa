@@ -15,13 +15,15 @@ class ProductWithDetails extends Component {
   constructor(props) {
     super(props);
 
-    console.log(this.props);
     this.state = {
-      product: this.props.currencies,
+      data: this.props,
     }
   }
 
   render() {
+    console.log(window.location.pathname.replace('/', ''));
+    // let { productId } = window.location.pathname.replace('/', '');
+    console.log(this.state);
     return (
       <PDPWrapper>
         <ImageWrap>
@@ -92,45 +94,39 @@ class ProductWithDetails extends Component {
 }
 
 const GetProductDetails = gql`
-  query currency {
-    currencies {
-      label,
-      symbol
+  query product($id: id) {
+    id
+    name
+    inStock
+    gallery
+    description
+    category
+    attributes {
+      id
+      name
+      type
+      items {
+        displayValue
+        value
+        id
+      }
     }
-  }
-
+    prices {
+      currency {
+        label
+        symbol
+      }
+      amount
+    }
+    brand
+  }  
 `;
 
-const ProductDetails = graphql(GetProductDetails)(ProductWithDetails);
-
+const ProductDetails = graphql(GetProductDetails, {
+  name: 'product',
+  options: props => {
+    return { variables: { id: window.location.pathname.replace('/', '') }};
+  }
+})(ProductWithDetails);
 
 export default ProductDetails;
-
-
-  // query product(id: "jacket-canada-goosee")  {
-  //     id
-  //     name
-  //     inStock
-  //     gallery
-  //     description
-  //     category
-  //     attributes {
-  //       id
-  //       name
-  //       type
-  //       items {
-  //         displayValue
-  //         value
-  //         id
-  //       }
-  //     }
-  //     prices {
-  //       currency {
-  //         label
-  //         symbol
-  //       }
-  //       amount
-  //     }
-  //     brand
-  //   }
-  // }

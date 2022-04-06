@@ -53,6 +53,7 @@
 .modalOpen,
 .openCurrency {
     display: flex;
+    flex-direction: column;
 }
 
 .modlaClose,
