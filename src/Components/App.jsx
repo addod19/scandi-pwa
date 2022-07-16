@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 
 import ProductListing from '../Containers/ProductListing';
-import ProductDetails from '../containers/ProductDetails';
+import PDetails from '../containers/PDetails';
 import { StyledApp, StyledNav } from '../styles/AppStyle';
 
 
@@ -22,7 +22,7 @@ export default class App extends Component {
             </StyledNav>
             <Routes>
               <Route exact path="/" component={<ProductListing />} />
-              <Route exact path="/:id" component={<ProductDetails />} />
+              <Route exact path="/:id" component={<PDetails />} />
             </Routes>
           </StyledApp>
         </div>

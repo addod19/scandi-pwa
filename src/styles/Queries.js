@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 const ProductCardWrap = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-end;
+  display: grid;
+  grid-template-columns: repeat(1fr, 3);
   align-items: center;
   padding: 16px;
   position: static;
@@ -16,7 +18,7 @@ const ProductCardWrap = styled.section`
   flex-grow: 0;
   margin: 25px 25px;
   height: 450px;
-  width: 400px;
+  width: 300px;
   margin-top: 100px;
   // border: 1px solid red;
 `;
@@ -47,7 +49,7 @@ const H3 = styled.h3`
 
 
 const ProductCard = styled.div`
-
+  width: 400px;
 `;
 
 

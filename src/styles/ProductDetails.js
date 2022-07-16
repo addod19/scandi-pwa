@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const PDPWrapper = styled.section`
-  width: 80%;
+  width: 90%;
   display: flex;
   margin: auto;
 `;
@@ -20,6 +20,7 @@ const ImageSamplesWrap = styled.div`
 const SmallImg = styled.img`
   width: 100%;
   height: 6em;
+  margin: 5px;
 `;
 
 const MainImageWrap = styled.div`
@@ -30,23 +31,30 @@ const BigImg = styled.img`
   width: 400px;
   height: 600px;
   position: relative;
-  bottom: 50px;
-  right: 40px;
+  bottom: 20px;
+  right: 1px;
+  margin-left: 30px;
 `;
 
 const DetailsWrap = styled.div`
-  width: 40%;
-  margin-right: 10%;
+  width: 60%;
+  margin-top: -20px;
 `;
 
-const NameWrap = styled.div``;
-const PDTName = styled.h3``;
+const NameWrap = styled.div`
+  height: 150px;
+`;
+const PDTName = styled.h3`
+  height: 130px;
+  width: 80%;
+  margin: auto;
+`;
 const Apollo = styled.div`
   position: absolute;
   width: 292px;
   height: 27px;
-  left: 929px;
-  top: 160px;
+  // left: 929px;
+  top: 100px;
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 600;
@@ -60,8 +68,8 @@ const RunShort = styled.div`
   position: absolute;
   width: 292px;
   height: 27px;
-  left: 929px;
-  top: 203px;
+  // left: 929px;
+  top: 143px;
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;
@@ -71,13 +79,17 @@ const RunShort = styled.div`
   align-items: center;
   color: #1D1F22;
 `;
-const SizesWrap = styled.div``;
+const SizesWrap = styled.div`
+  width: 80%;
+  height: 120px;
+  margin: auto;
+`;
 const SizesLabel = styled.h3`
   position: absolute;
   width: 38px;
   height: 18px;
-  left: 929px;
-  top: 273px;
+  // left: 929px;
+  top: 213px;
   font-family: 'Roboto Condensed';
   font-style: normal;
   font-weight: 700;
@@ -97,8 +109,8 @@ const SizesList = styled.ul`
   position: absolute;
   width: 38px;
   height: 18px;
-  left: 929px;
-  top: 320px;
+  // left: 929px;
+  top: 260px;
   font-family: 'Roboto Condensed';
   font-style: normal;
   font-weight: 700;
@@ -123,16 +135,17 @@ const SizesBtn = styled.button`
   }
 `;
 
-
 const PriceWrap = styled.div`
-  margin-top: 20px;
+  margin: auto;
+  height: 100px;
+  width: 80%;
 `;
 const PriceLabel = styled.h2`
   position: absolute;
   width: 50px;
   height: 18px;
-  left: 929px;
-  top: 384px;
+  // left: 929px;
+  top: 324px;
   font-family: 'Roboto Condensed';
   font-style: normal;
   font-weight: 700;
@@ -147,8 +160,8 @@ const PriceAmount = styled.h3`
   position: absolute;
   width: 86px;
   height: 46px;
-  left: 929px;
-  top: 412px;
+  // left: 929px;
+  top: 352px;
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
@@ -167,16 +180,20 @@ const AddToCartBtn = styled.div`
   position: absolute;
   width: 292px;
   height: 52px;
-  left: 929px;
-  top: 478px;
+  left: 729px;
+  top: 418px;
   background: #5ECE7B;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const DescriptionWrap = styled.div`
   position: absolute;
   width: 292px;
   height: 103px;
-  left: calc(42% - 292px/2 + 355px);
-  bottom: 72px;
+  left: calc(42% - 392px/2 + 355px);
+  bottom: -60px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -185,7 +202,8 @@ const DescriptionWrap = styled.div`
   color: #1D1F22;
 `;
 const DescText = styled.p`
-
+  position: absolute;
+  top: -40px;
 `;
 
 const AddToCarAction = styled.button`

@@ -18,7 +18,7 @@ const ProductListingWrap = styled.div`
 `;
 
 const Container = styled.div`
-  width: 80%;
+  width: 95%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;

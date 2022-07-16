@@ -23,7 +23,7 @@ class ProductWithDetails extends Component {
   render() {
     console.log(window.location.pathname.replace('/', ''));
     // let { productId } = window.location.pathname.replace('/', '');
-    console.log(this.state);
+    console.log(this.state.data);
     return (
       <PDPWrapper>
         <ImageWrap>
@@ -124,7 +124,7 @@ const GetProductDetails = gql`
 
 const ProductDetails = graphql(GetProductDetails, {
   name: 'product',
-  options: props => {
+  options: () => {
     return { variables: { id: window.location.pathname.replace('/', '') }};
   }
 })(ProductWithDetails);

@@ -19,14 +19,16 @@ const GetProductListings = () => {
   const { loading, error, data } = useQuery(GET_CATEGORY);
   const dispatch = useDispatch();
 
-  console.log(dispatch);
+  console.log(data);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
   
   return data.category.products.map(({ id, inStock, gallery, name }) => (
     <ProductCardWrap key={id} data={data}>
-      <Link key={id} to={{ pathname: `/${id}`, state: data }} data={data} >
+      <Link key={id} to={{ pathname: `/${id}`, state: { id, inStock, gallery, name } }}
+        data={[id, inStock, gallery, name]}
+      >
         <ProductCard >
           {inStock ? null : <H3>Out of Stock</H3>}
           <Img src={gallery[0]} alt="sample" />
