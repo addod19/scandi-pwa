@@ -11,13 +11,9 @@ import { Link } from "react-router-dom";
 import { ProductCardWrap, ProductCard, Img, H3 } from "../styles/Queries";
 import CartOverlay from '../Components/CartOverlay';
 import Currency from '../Components/Currency';
-import { useDispatch } from 'react-redux';
-
-// import { Title, Label } from '../styles/ProductListing';
 
 const GetProductListings = () => {
   const { loading, error, data } = useQuery(GET_CATEGORY);
-  const dispatch = useDispatch();
 
   console.log(data);
 

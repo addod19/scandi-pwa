@@ -11,13 +11,20 @@ import Navbar from './Components/Navbar';
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cart: 'data from parent',
+    }
+  }
   render() {
+    const  { cart } = this.state;
     return (
       <Router>
         <div className="container-fluid">
           <StyledApp>
             <StyledNav>
-              <Navbar />
+              <Navbar cart={cart} />
             </StyledNav>
             <Routes>
               <Route exact path="/" element={<ProductListing />} />

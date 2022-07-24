@@ -15,6 +15,7 @@ class Navbar extends Component {
       isActive: false,
       currency: '$',
       isShowCartOverlay: false,
+      cart: this.props.cart,
     };
 
     this.toggleIsActive = this.toggleIsActive.bind(this);
@@ -45,11 +46,11 @@ class Navbar extends Component {
       isShowCartOverlay: !prevState.isShowCartOverlay,
     }));
 
-
+    console.log(this.state.cart);
   }
 
   render() {
-    const { currency } = this.state;
+    const { currency, cart } = this.state;
     const symbols = [
       {
         value: '$',

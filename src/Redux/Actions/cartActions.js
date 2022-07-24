@@ -1,20 +1,9 @@
-export const addToCart = (product) => (dispatch, getState) => {
-  const cartItems = getState().cart.cartItems.slice();
-  let alreadyExists = false;
-  cartItems.forEach((x) => {
-    if (x._id === product._id) {
-      alreadyExists = true;
-      x.count++;
-    }
-  });
-  if (!alreadyExists) {
-    cartItems.push({ ...product, count: 1 });
-  }
-  dispatch({
+export const addToCart = (product) => {
+  console.log(product);
+  return {
     type: "ADD_TO_CART",
-    payload: { cartItems },
-  });
-  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    product
+  }
 };
 
 export const removeFromCart = (product) => (dispatch, getState) => {

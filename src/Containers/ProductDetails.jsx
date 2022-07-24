@@ -1,49 +1,45 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { PDPWrapper, ImageWrap, ImageSamplesWrap, MainImageWrap, 
-  DetailsWrap, NameWrap, SizesWrap, PriceWrap, AddToCartBtn,
-  DescriptionWrap, SmallImg, BigImg, PDTName, SizesLabel, SizesList,
-  SizesBtn, XSmall, Small, Medium, Large, PriceLabel, PriceAmount,
-  DescText, Apollo, RunShort, AddToCarAction
+    DetailsWrap, NameWrap, SizesWrap, PriceWrap, AddToCartBtn,
+    DescriptionWrap, SmallImg, BigImg, PDTName, SizesLabel, SizesList,
+    SizesBtn, XSmall, Small, Medium, Large, PriceLabel, PriceAmount,
+    DescText, Apollo, RunShort, AddToCarAction
 } from '../styles/ProductDetails';
+import {
+  useQuery,
+  gql
+} from "@apollo/client";
+import { addToCart } from '../Redux/Actions/cartActions';
+import { connect, useDispatch } from 'react-redux';
 
-import { gql } from "@apollo/client";
-import { graphql } from '@apollo/client/react/hoc';
-import CartOverlay from '../Components/CartOverlay';
 
-
-class ProductWithDetails extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      data: this.props,
-    }
-  }
-
-  render() {
-    console.log(window.location.pathname.replace('/', ''));
-    // let { productId } = window.location.pathname.replace('/', '');
-    console.log(this.state.data);
-    return (
-      <PDPWrapper>
+const GetPDetails = () => {
+  const { loading, error, data } = useQuery(GET_PRODUCT);
+  const dispatch = useDispatch();
+  console.log(data);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
+  console.log(window.location.pathname.replace('/', ''));
+  return (
+    <PDPWrapper>
         <ImageWrap>
           <ImageSamplesWrap>
-            <SmallImg src="https://images.canadagoose.com/image/upload/w_1333,c_scale,f_auto,q_auto:best/v1634058169/product-image/2409L_61_o.png" alt="check me" />
-            <SmallImg src="https://images.canadagoose.com/image/upload/w_1333,c_scale,f_auto,q_auto:best/v1634058169/product-image/2409L_61_o.png" alt="check me" />
-            <SmallImg src="https://images.canadagoose.com/image/upload/w_1333,c_scale,f_auto,q_auto:best/v1634058169/product-image/2409L_61_o.png" alt="check me" />
+            <SmallImg src={data.product.gallery[0]} alt="check me" />
+            <SmallImg src={data.product.gallery[0]} alt="check me" />
+            <SmallImg src={data.product.gallery[0]} alt="check me" />
           </ImageSamplesWrap>
           <MainImageWrap>
-            <BigImg src="https://images.canadagoose.com/image/upload/w_1333,c_scale,f_auto,q_auto:best/v1634058169/product-image/2409L_61_o.png" alt="check me" />
+            <BigImg src={data.product.gallery[0]} alt="check me" />
           </MainImageWrap>
         </ImageWrap>
         <DetailsWrap>
           <NameWrap>
             <PDTName>
               <Apollo>
-                Apollo
+                {data.product.brand}
               </Apollo><br /> 
               <RunShort>
-                Running Short
+                {data.product.category}
               </RunShort>
             </PDTName>
           </NameWrap>
@@ -74,59 +70,62 @@ class ProductWithDetails extends Component {
           </SizesWrap>
           <PriceWrap>
             <PriceLabel>PRICE:</PriceLabel>
-            <PriceAmount>${50.00}</PriceAmount>
+            <PriceAmount>${data.product.prices[0].amount}</PriceAmount>
           </PriceWrap>
           <AddToCartBtn>
-            <AddToCarAction>ADD TO CART</AddToCarAction>
+            <AddToCarAction onClick={() => dispatch(addToCart(data.product))}>ADD TO CART</AddToCarAction>
           </AddToCartBtn>
           <DescriptionWrap>
             <DescText>
-              Find stunning women's cocktail dresses and party dresses.
-              Stand out in lace and metallic cocktail dresses and party dresses 
-              from all your favorite brands.
+              {data.product.description}
             </DescText>
           </DescriptionWrap>
         </DetailsWrap>
-        <CartOverlay data={this.props} />
       </PDPWrapper>
-    )
+  );
+}
+
+const GET_PRODUCT = gql`
+  query GetPDetails {
+    product(id: "${window.location.pathname.replace('/', '')}") {
+        id
+        name
+        inStock
+        gallery
+        description
+        category
+        attributes {
+          id
+          name
+          type
+          items {
+            displayValue
+            value
+            id
+          }
+        }
+        prices {
+          currency {
+            label
+            symbol
+          }
+          amount
+        }
+        brand
+    }
+  }
+`;
+
+const mapStateToProps = state => {
+  return {
+    selectedItems: (state),
   }
 }
 
-const GetProductDetails = gql`
-  query product($id: id) {
-    id
-    name
-    inStock
-    gallery
-    description
-    category
-    attributes {
-      id
-      name
-      type
-      items {
-        displayValue
-        value
-        id
-      }
-    }
-    prices {
-      currency {
-        label
-        symbol
-      }
-      amount
-    }
-    brand
-  }  
-`;
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     addToCart: item => dispatch(addToCart(item)),
+//   }
+// }
 
-const ProductDetails = graphql(GetProductDetails, {
-  name: 'product',
-  options: () => {
-    return { variables: { id: window.location.pathname.replace('/', '') }};
-  }
-})(ProductWithDetails);
-
-export default ProductDetails;
+export default connect(mapStateToProps)(GetPDetails);
